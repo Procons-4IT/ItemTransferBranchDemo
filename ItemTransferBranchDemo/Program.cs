@@ -28,6 +28,7 @@ namespace ItemTransferBranchDemo
                 MyMenu.AddMenuItems();
                 oApp.RegisterMenuEventHandler(MyMenu.SBO_Application_MenuEvent);
                 Application.SBO_Application.AppEvent += new SAPbouiCOM._IApplicationEvents_AppEventEventHandler(SBO_Application_AppEvent);
+                Application.SBO_Application.StatusBar.SetSystemMessage("Items Transfer Add-on installed successfully.", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
                 oApp.Run();
             }
             catch (Exception ex)

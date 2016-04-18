@@ -9,27 +9,27 @@ namespace ItemTransferBranchDemo
     {
         public void AddMenuItems()
         {
-            SAPbouiCOM.Menus oMenus = null;
-            SAPbouiCOM.MenuItem oMenuItem = null;
+            //SAPbouiCOM.Menus oMenus = null;
+            //SAPbouiCOM.MenuItem oMenuItem = null;
 
-            oMenus = Application.SBO_Application.Menus;
+            //oMenus = Application.SBO_Application.Menus;
 
-            SAPbouiCOM.MenuCreationParams oCreationPackage = null;
-            oCreationPackage = ((SAPbouiCOM.MenuCreationParams)(Application.SBO_Application.CreateObject(SAPbouiCOM.BoCreatableObjectType.cot_MenuCreationParams)));
-            oMenuItem = Application.SBO_Application.Menus.Item("43520"); // moudles'
+            //SAPbouiCOM.MenuCreationParams oCreationPackage = null;
+            //oCreationPackage = ((SAPbouiCOM.MenuCreationParams)(Application.SBO_Application.CreateObject(SAPbouiCOM.BoCreatableObjectType.cot_MenuCreationParams)));
+            //oMenuItem = Application.SBO_Application.Menus.Item("43520"); // moudles'
 
-            oCreationPackage.Type = SAPbouiCOM.BoMenuType.mt_POPUP;
-            oCreationPackage.UniqueID = "ItemTransferBranchDemo";
-            oCreationPackage.String = "ItemTransferBranchDemo";
-            oCreationPackage.Enabled = true;
-            oCreationPackage.Position = -1;
+            //oCreationPackage.Type = SAPbouiCOM.BoMenuType.mt_POPUP;
+            //oCreationPackage.UniqueID = "ItemTransferBranchDemo";
+            //oCreationPackage.String = "ItemTransferBranchDemo";
+            //oCreationPackage.Enabled = true;
+            //oCreationPackage.Position = -1;
 
-            oMenus = oMenuItem.SubMenus;
+            //oMenus = oMenuItem.SubMenus;
 
             try
             {
                 //  If the manu already exists this code will fail
-                oMenus.AddEx(oCreationPackage);
+                //oMenus.AddEx(oCreationPackage);
             }
             catch (Exception e)
             {
@@ -38,17 +38,17 @@ namespace ItemTransferBranchDemo
 
             try
             {
-                // Get the menu collection of the newly added pop-up item
-                oMenuItem = Application.SBO_Application.Menus.Item("ItemTransferBranchDemo");
-                oMenus = oMenuItem.SubMenus;
+                //// Get the menu collection of the newly added pop-up item
+                //oMenuItem = Application.SBO_Application.Menus.Item("ItemTransferBranchDemo");
+                //oMenus = oMenuItem.SubMenus;
 
-                // Create s sub menu
-                oCreationPackage.Type = SAPbouiCOM.BoMenuType.mt_STRING;
-                oCreationPackage.UniqueID = "ItemTransferBranchDemo.Form1";
-                oCreationPackage.String = "Form1";
-                oMenus.AddEx(oCreationPackage);
+                //// Create s sub menu
+                //oCreationPackage.Type = SAPbouiCOM.BoMenuType.mt_STRING;
+                //oCreationPackage.UniqueID = "ItemTransferBranchDemo.Form1";
+                //oCreationPackage.String = "Form1";
+                //oMenus.AddEx(oCreationPackage);
             }
-            catch (Exception er)
+            catch (Exception ex)
             { //  Menu already exists
                 Application.SBO_Application.SetStatusBarMessage("Menu Already Exists", SAPbouiCOM.BoMessageTime.bmt_Short, true);
             }
@@ -60,11 +60,7 @@ namespace ItemTransferBranchDemo
 
             try
             {
-                if (pVal.BeforeAction && pVal.MenuUID == "ItemTransferBranchDemo.Form1")
-                {
-                    Form1 activeForm = new Form1();
-                    activeForm.Show();
-                }
+
             }
             catch (Exception ex)
             {
