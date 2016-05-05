@@ -46,6 +46,10 @@ namespace ItemTransferBranchDemo
         {
             return Regex.IsMatch(key, @"^[0-9]*\.?[0-9]+$");
         }
+        public static void StatusbarMessage(string message, SAPbouiCOM.BoStatusBarMessageType type)
+        {
+            Application.SBO_Application.StatusBar.SetText(message, SAPbouiCOM.BoMessageTime.bmt_Medium, type);
+        }
     }
     }
 

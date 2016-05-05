@@ -19,7 +19,7 @@ namespace ItemTransferBranchDemo
                return diCompany;
            }
        }
-       public static List<Item> getItemsForGoodsIssue(int id)
+       public static List<Item> GetItemsForGoodsIssue(int id)
        {
            var goodsIssue = DiCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oInventoryGenExit) as SAPbobsCOM.Documents;
            List<Item> items = new List<Item>() ;
@@ -39,16 +39,19 @@ namespace ItemTransferBranchDemo
 
            return items;
        }
-       public static List<Item> getItemsForGoodsIssues(List<string> goodsIssueIDs)
+       public static List<Item> GetItemsForGoodsIssues(List<string> goodsIssueIDs)
        {
            List<Item> items = new List<Item>();
            foreach (var id in goodsIssueIDs)
            {
-               var goodsIssueItems = getItemsForGoodsIssue(Convert.ToInt32(id));
+               var goodsIssueItems = GetItemsForGoodsIssue(Convert.ToInt32(id));
                items.AddRange(goodsIssueItems);
            }
            return items;
        }
+
+
+
        #region FIELD METHODS
 
        public static DateTime getDateTimeEditTxt(SAPbouiCOM.EditText txtbox)
@@ -234,5 +237,6 @@ namespace ItemTransferBranchDemo
        }
 
        #endregion
+
     }
 }
