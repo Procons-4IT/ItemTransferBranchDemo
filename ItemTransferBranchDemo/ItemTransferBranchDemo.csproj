@@ -51,15 +51,9 @@
       <DependentUpon>Goods Issue.b1f</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
-    <None Include="Form1.b1f">
-      <FormCategory>UserForm</FormCategory>
-    </None>
     <Compile Include="AddonInfoInfo.cs" />
     <Compile Include="B1Helper.cs" />
     <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="Form1.b1f.cs">
-      <DependentUpon>Form1.b1f</DependentUpon>
-    </Compile>
     <Compile Include="Goods Receipt.b1f.cs">
       <DependentUpon>Goods Receipt.b1f</DependentUpon>
     </Compile>
